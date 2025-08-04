@@ -1,0 +1,25 @@
+name: Auto Sync Inventory
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # 每30分钟运行一次（UTC时间）
+  workflow_dispatch:        # 允许你手动触发运行
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install -r packages.txt
+
+      - name: Run sync script
+        run: python main.py
