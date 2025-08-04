@@ -1,3 +1,7 @@
-def check_amazon_stock(asin):
-    # 模拟返回库存状态
-    return "在庫あり"  # 可替换为实际爬虫逻辑或API
+def check_amazon_inventory():
+    print("🧪 模拟从 Amazon 获取库存")
+    return {
+        "B08XXXXXXX": 2,
+        "B09YYYYYYY": 5
+    }
+
