@@ -1,8 +1,8 @@
 name: Auto Sync Inventory
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"  # 每30分钟运行一次（UTC时间）
+ # schedule:
+ #   - cron: "*/30 * * * *"  # 每30分钟运行一次（UTC时间）
   workflow_dispatch:        # 允许你手动触发运行
 
 jobs:
